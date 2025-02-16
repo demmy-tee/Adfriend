@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "adFreind",
+  "version": "1.0",
+  "description": "Replaces ads with meaningful and helpful content.",
+  "permissions": [
+    "activeTab"
+  ],
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "icon16.svg"
+    }
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
